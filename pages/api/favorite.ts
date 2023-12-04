@@ -4,6 +4,7 @@ import { without } from "lodash";
 import prismadb from '@/lib/prismadb'
 import serverAuth from "@/lib/serverAuth";
 
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     try {
         if (req.method === 'POST') {
@@ -20,6 +21,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             if (!existingMovie) {
                 throw new Error('Invalid ID');
             }
+
+
             const user = await prismadb.user.update({
                 where: {
                     email: currentUser.email || '',
