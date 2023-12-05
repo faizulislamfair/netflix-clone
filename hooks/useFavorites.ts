@@ -10,7 +10,7 @@ const useFavorites = () => {
         mutate
     } = useSWR('/api/favorites', fetcher, {
         revalidateIfStale: false,
-        revalidateOnMount: false,
+        revalidateOnFocus: false,
         revalidateOnReconnect: false,
     });
 

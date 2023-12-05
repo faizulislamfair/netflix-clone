@@ -26,7 +26,7 @@ export async function getServerSideProps(context: NextPageContext) {
 export default function Home() {
 
   const { data: movies = [] } = useMovieList();
-  const { data: favorits = [] } = useFavorites();
+  const { data: favorites = [] } = useFavorites();
 
   return (
     <>
@@ -34,7 +34,7 @@ export default function Home() {
       <Billboard />
       <div className="pb-40">
         <MovieList title="Trending Now" data={movies} />
-        <MovieList title="My List" data={favorits} />
+        <MovieList title="My List" data={favorites} />
       </div>
     </>
   )
