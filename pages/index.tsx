@@ -5,6 +5,8 @@ import useFavorites from "@/hooks/useFavorites";
 import useMovieList from "@/hooks/useMovieList";
 import { NextPageContext } from "next"
 import { getSession } from "next-auth/react"
+import InfoModal from '@/components/InfoModal';
+
 
 export async function getServerSideProps(context: NextPageContext) {
   const session = await getSession(context);
@@ -30,6 +32,7 @@ export default function Home() {
 
   return (
     <>
+      <InfoModal visible onClose={() => { }} />
       <Navbar />
       <Billboard />
       <div className="pb-40">
