@@ -101,7 +101,7 @@ const InfoModal: React.FC<InfoModalProps> = ({ visible, onClose }) => {
                             items-center
                             justify-center
                             "
-                            onClick={() => { }}>
+                            onClick={handleClose}>
 
                             <AiOutlineClose className="text-white" size={20} />
 
@@ -112,15 +112,36 @@ const InfoModal: React.FC<InfoModalProps> = ({ visible, onClose }) => {
                         bottom-[10%]
                         left-10
                         ">
-                            <p className="text-white text-3xl md:text-4xl h-full">
+                            <p className="text-white text-3xl md:text-4xl h-full lg:text-5xl font-bold mb-8">
                                 {data?.title}
                             </p>
+                            <div className="flex flex-row gap-4 items-center">
+                                <PlayButton movieId={data?.id} />
+                                <FavoriteButton movieId={data?.id} />
+                            </div>
                         </div>
-
                     </div>
+
+                    <div className="px-12 py-8">
+                        <p className="text-green-400 font-semibold text-lg">
+                            New
+                        </p>
+                        <p className="text-white text-lg">
+                            {data?.duration}
+                        </p>
+                        <p className="text-white text-lg">
+                            {data?.genre}
+                        </p>
+                        <p className="text-white text-lg">
+                            {data?.description}
+                        </p>
+                    </div>
+
+
                 </div>
 
             </div>
+
         </div>
     )
 }
